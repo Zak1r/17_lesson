@@ -103,9 +103,34 @@
 
 # print(range(6).index(4))
 
-str = "Putin is the worst"
+# str = "Putin is the worst"
 
-str = str.replace('is', 'IS')
-print(str.find('wo'))                # найдет по значению .find
+# str = str.replace('is', 'IS')
+# print(str.find('wo'))                # найдет по значению .find
+# print(str.split('th'))
+# print(str.strip(' '))               #удаляет по значению 
+# print(str.rstrip(' '))              #справа
+# print(str.lstrip(' '))              #слева
+# print(str.capitalize())
+# print(str.lower())
+# print(str.upper())
 
-print(str)
+# print('CASEFOLD',str.casefold())
+# print('COUNT',str.count('P'))        #сколько раз встречается
+# print('END WITH',str.endswith('P'))   #если да то тру а иначе фалс
+# print('SWAP CASE',str.swapcase())
+# print('HELLO I AM ZAKIR'.title())
+
+
+def format_tel(tel):
+    return f'{tel[0:4]} ({tel[4:6]}) {tel[6:9]}-{tel[9:11]}-{tel[11:13]}'
+
+# format_tel('+998997776655')  #+998(99) 777-66-55
+# Решение с использованием срезов
+
+def format_tel_2(tel):
+    return '{}{}{}{}({}{}) {}{}{}-{}{}-{}{}'.format(*list(tel))
+
+print(format_tel('+998997776655'))
+print(format_tel_2('+998997776655'))
+print(*list('+998997776655'))
